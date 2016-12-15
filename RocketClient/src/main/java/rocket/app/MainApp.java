@@ -1,8 +1,9 @@
 package rocket.app;
-
+//
 import java.io.IOException;
 import java.io.Serializable;
 import java.io.StringWriter;
+import java.lang.reflect.InvocationTargetException;
 import java.util.function.Consumer;
 
 import javax.swing.SwingUtilities;
@@ -53,9 +54,16 @@ public class MainApp extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		
 		// START is executed by the Application framework after INIT
-		AnchorPane root = new AnchorPane();
-		Scene scene = new Scene(root, 1300, 500);
-
+		
+		
+		/*
+		 * Not sure how to wire this to get it to open
+		 */
+		FXMLLoader loader = FXMLLoader.load(getClass().getResource("/view/Mortgage.fxml"));
+		loader.setController("MortgageController.java");
+		
+		Scene scene = new Scene(loader.load(), 1300, 500);
+		
 		this.primaryStage = primaryStage;
 		
 		Screen screen = Screen.getPrimary();

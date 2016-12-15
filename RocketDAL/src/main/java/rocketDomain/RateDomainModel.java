@@ -1,7 +1,7 @@
 package rocketDomain;
 
 public class RateDomainModel {
-
+//
 	private int iRateID;
 	private int iMinCreditScore;
 	private double dInterestRate;
